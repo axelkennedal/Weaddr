@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--Main stylesheet-->
+		<link rel="stylesheet" type="text/css" href="weathermain.css">
+		<!--Oswald font-->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+		<!--jQuery library-->
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<!--jQuery UI library-->
+		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<!--jQuery for time-->
+		<script src="weatherscriptTime.js"></script>
+		<!--jQuery for location-->
+		<script src="weatherscriptLocation.js"></script>
+
+	</head>
+
+	<body>
+
+	<div id="content">
+	<div id="header">
+		<img src="weatherIcons/white/weaddrLogo.png">
+		<br>
+		<div id="time" class="fat"></div>
+		<div id="day" class="light"></div>
+	</div>
+	<!--MAIN CONTENT-->
+		<div id="locationText">
+			<div  class="light">Weather for: </div>
+			<div id="currentLocation" class="fat">Attempting to find your current location...<br><img src="loading.gif"><br><p class="light small"> (Make sure you allow the browser to get your position and that JavaScript is enabled.<br>Use the "Change location" field below if your position is not found.)</p></div> <!--Will be replaced by script-->
+		</div>
+		<br>
+		<div id="currentWeather">
+			<!--LOADING INDICATOR-->
+			<div id="loading" class="huge">Loading weather data...</div>
+			<div id="currentTemperature" class="fat" style="font-size: 180px; width: 350px; display: block; float: left; margin-right: 20px; margin-top: 40px;">       </div> <!--Will be replaced by script-->
+			<div id="weatherIcon"></div>
+
+		</div>
+		<!--Shows up when user did not input a correct location -->
+		<div id="incorrectLocation" class="fat medium" style="display:none">
+		The location you requested could not be found. Please enter a city name followed by the name of the country, e.g: <br><i>Paris, France</i> 	 or  	<i>New York, USA</i><br><span class="light tiny">If that doesn't work, try to put in the city name without the country name.</span>
+		</div>
+
+		<!--Change location-->
+		<br>
+		<div class="container">
+			<div class="header">Change location <img src="expand.png" style="height: 10px; margin-left: 7px;"></div>
+				<form class="changeLocation light small">
+					<input id="locationChoice" type="text" placeholder="Enter new location">
+					<input id="locationSubmit" type="button" value="Change">
+					<input id="findMe" type="button" value="Just find me!">
+				</form>
+		</div>
+
+		<!--Forecast for rest of the day-->
+		<div id="forecastToday">
+			<span class="big">Today</span>
+			<hr style="height:2px;">
+			<div id ="forecastTodayData">
+				<!--Filled dynamically by script
+				<div class="laterTodayMoment">
+					<span class="small fat">24:00</span>
+					<br>
+					<span class="light big">-5°</span>
+					<br>
+					<img src="weatherIcons/snow.png">
+				</div>
+				-->
+			</div>
+		</div>
+
+		<div id="forecast">
+			<span class="big">Forecast</span>
+			<hr style="height:2px;">
+			<div id="forecastData">
+				<div class="forecastDataDay">
+				<!--Filled dynamically by script
+					<div class="forecastDay leftfloat light">Tomorrow</div>
+					<div class="forecastTemperature leftfloat">6.6 - 7.3°</div>
+					<img src="weatherIcons/sunnyCloudy.png">
+					<hr>
+				-->
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<span class="light small">Change style</span><br>
+		<select id="style">
+			<option>Natural</option>
+			<option>Black and White</option>
+		</select>
+
+		<!--FOOTER-->
+		<footer class="tiny light">Copyright © 2014 Axel Kennedal | Contact: axelkennedal@me.com <br> Weather data fetched (every 30 minutes) from Open Weather Map, based on 40,000 weather stations worldwide | Data may be inaccurate <br> Icons provided by Alex Sheyn, Fernando Vasconcelos, Ilsur Aptukov, Iconathon, Sergio Luna, Jory Raphael, John Caserta and Madebyelvis</footer>
+		</div>
+
+
+	<!--Grass-->
+	<img src="weatherIcons/white/grassBottom.png" style="width: 100%; margin-bottom: -9px; margin-top: -50px;">
+
+	<!--GRADIENT BACKGROUND-->
+	<div class="backgroundGradientDay"></div>
+	<div class="backgroundGradientSunset"></div>
+	<div class="backgroundGradientNight"></div>
+
+
+	</body>
+</html>
